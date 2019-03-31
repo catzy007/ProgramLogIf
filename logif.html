@@ -2,22 +2,36 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Modus Ponens</title>
+	<title>Metode Inferensi</title>
 </head>
 	
 <body>
-	<h2>Modus Ponens</h2>
+	<h2>Metode Inferensi</h2>
 
 	<table>
 		<tr>
-			<td><a>Premis 1 : </a></td>
+			<td><a>Pilih Mode</a></td>
+			<td><a> : </a></td>
+			<td>
+				<select id="IptMode">
+					<option value="1" selected>Modus Ponens</option>
+					<option value="2">Modus Tollens</option>
+					<option value="3">Equivalence Elimination</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td><a>Premis 1</a></td>
+			<td><a> : </a></td>
 			<td><input type="text" id="IptPremis1"></td>
 		</tr>
 		<tr>
-			<td><a>Premis 2 : </a></td>
+			<td><a>Premis 2</a></td>
+			<td><a> : </a></td>
 			<td><input type="text" id="IptPremis2"></td>
 		</tr>
 		<tr>
+			<td></td>
 			<td></td>
 			<td><input type="button" onclick="myFunction()" value="Submit"></td>
 		</tr>
@@ -25,25 +39,41 @@
 	<br>
 	<table>
 		<tr>
-			<td><a>Premis 1 : </a></td>
+			<td><a>Premis 1</a></td>
+			<td><a> : </a></td>
 			<td><a id="premis1"></a></td>
 		</tr>
 		<tr>
-			<td><a>Premis 2 : </a></td>
+			<td><a>Premis 2</a></td>
+			<td><a> : </a></td>
 			<td><a id="premis2"></a></td>
 		</tr>
 		<tr>
-			<td><a>Konklusi : </a></td>
+			<td><a>Konklusi</a></td>
+			<td><a> : </a></td>
 			<td><a id="konklusi"></a></td>
 		</tr>
 	</table>
+	
+	<p id="errMsg"> </p>
 
 	<script>
 	function myFunction() {
 		var str1 = document.getElementById('IptPremis1').value;
 		var str2 = document.getElementById('IptPremis2').value;
+		var mode = document.getElementById('IptMode').value;
 		
-		modusPonens(str1, str2);
+		if(str1.length == 0 || str2.length == 0 ){
+			document.getElementById("errMsg").innerHTML = "Form tidak boleh kosong!";
+		}else{
+			document.getElementById("errMsg").innerHTML = " ";
+		}
+		
+		if(mode == 1 ){
+			modusPonens(str1, str2);
+		}else if(mode > 1){
+			document.getElementById("errMsg").innerHTML = "Under Progress!";
+		}
 	}
 	</script>
 
