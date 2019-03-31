@@ -8,13 +8,35 @@
 <body>
 	<h2>Modus Ponens</h2>
 
-	Premis 1 : <input type="text" id="IptPremis1"><br>
-	Premis 2 : <input type="text" id="IptPremis2"><br><br>
-	<input type="button" onclick="myFunction()" value="Submit">
-
-	<p>Premis 1 : <a id="premis1"></a></p>
-	<p>Premis 2 : <a id="premis2"></a></p>
-	<p>Konklusi : <a id="konklusi"></a></p>
+	<table>
+		<tr>
+			<td><a>Premis 1 : </a></td>
+			<td><input type="text" id="IptPremis1"></td>
+		</tr>
+		<tr>
+			<td><a>Premis 2 : </a></td>
+			<td><input type="text" id="IptPremis2"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="button" onclick="myFunction()" value="Submit"></td>
+		</tr>
+	</table>
+	<br>
+	<table>
+		<tr>
+			<td><a>Premis 1 : </a></td>
+			<td><a id="premis1"></a></td>
+		</tr>
+		<tr>
+			<td><a>Premis 2 : </a></td>
+			<td><a id="premis2"></a></td>
+		</tr>
+		<tr>
+			<td><a>Konklusi : </a></td>
+			<td><a id="konklusi"></a></td>
+		</tr>
+	</table>
 
 	<script>
 	function myFunction() {
