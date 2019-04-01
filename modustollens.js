@@ -7,7 +7,8 @@
 		var premis1q = globalRemover(globalGetQ(premis1, ' maka '), 'jika ');
 		
 		//hapus kata 'tidak' pada 'premis 2' 
-		var premis2x = globalRemover(premis2, 'tidak ');
+		var premis2x = globalRemover(premis2, 'tidak benar ');
+		var premis2x = globalRemover(premis2x, 'tidak ');
 		
 		//console.log(premis1q); //debug_line_can_be_removed
 		//console.log(premis2x); //debug_line_can_be_removed

@@ -1,6 +1,7 @@
 	function equElim(premis1, premis2){
 		document.getElementById("premis1").innerHTML = premis1;
 		document.getElementById("premis2").innerHTML = premis2;
+		
 		if(globalValidator(premis1, ' jika dan hanya jika ') && globalValidator(premis2, ' maka ')){
 			document.getElementById("konklusi").innerHTML = equElimResult(premis1, premis2);
 		}else{
