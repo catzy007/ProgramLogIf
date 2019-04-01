@@ -71,6 +71,8 @@
 		
 		if(mode == 1 ){
 			modusPonens(str1, str2);
+		}else if(mode == 2){
+			modusTollens(str1, str2);
 		}else if(mode > 1){
 			document.getElementById("errMsg").innerHTML = "Under Progress!";
 		}
@@ -78,20 +80,66 @@
 	</script>
 
 
-	<!-- algoritma dibawah adalah modus Ponens -->
+	<!-- algoritma dibawah adalah modus Ponens ===================== -->
+	<script src="modusponens.js"></script>
+
+	<!-- algoritma dibawah adalah modus Tollens ==================== -->
 	<script>
-	function modusPonens(premis1, premis2){
+	function modusTollens(premis1, premis2){
 		document.getElementById("premis1").innerHTML = premis1;
 		document.getElementById("premis2").innerHTML = premis2;
-		if(modusPonensGetP(premis1) == premis2){
-			document.getElementById("konklusi").innerHTML = modusPonensGetQ(premis1);
+		if(modusPonensGetQ(premis1) == premis2 && isNegasiP(premis2)){
+			document.getElementById("konklusi").innerHTML = modusTollensIsPNegasi(premis1);
 		}else{
 			document.getElementById("konklusi").innerHTML = "Tidak Valid!";
 		}
 	}
 
+	function modusTollensGetP2(premis1, premis2){
+		var mark=0; var key1='tidak benar '; var key2=' tidak ';
+		var 
+
+		for(var i=0; i<strQ.length; i++){
+			for(var j=0; j<key1.length; j++){
+				if(strQ.charAt(i+j) == key1.charAt(j)){
+					console.log(strQ.charAt(i+j) + ' ' + key1.charAt(j) + ' ' + mark + ' ' + key1.length);
+					mark++;
+				}else{
+					mark=0;
+					break;
+				}
+				if(mark == key1.length){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	//sebuah fungsi untuk mengecek apakah 'premis 2' mengandung 'tidak'
+	function modusTollensIsPNegasi(premis2){
+		var mark=0; var key1='tidak ';
+		var strQ = modusPonensGetQ(premis2);
+		
+		for(var i=0; i<strQ.length; i++){
+			for(var j=0; j<key1.length; j++){
+				if(strQ.charAt(i+j) == key1.charAt(j)){
+					//console.log(strQ.charAt(i+j) + ' ' + key1.charAt(j) + ' ' + mark + ' ' + key1.length);
+					mark++;
+				}else{
+					mark=0;
+					break;
+				}
+				if(mark == key1.length){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
 	//sebuah fungsi untuk mengekstrak 'p' dari 'premis 1'
-	function modusPonensGetP(premis1){
+	function modusTollensGetP(premis1){
 		var mark=0; 
 		var key1='jika '; var key2=' maka ';
 		var startStr=0; var endStr=0;
@@ -139,10 +187,9 @@
 	}
 
 	//sebuah fungsi untuk mengekstrak 'q' dari 'premis 1'
-	function modusPonensGetQ(premis1){
+	function modusTollensGetQ(premis1){
 		var mark; var key=' maka ';
 		var startStr=0; var endStr=premis1.length;
-		
 		
 		for(var i=0; i<premis1.length; i++){
 			for(var j=0; j<key.length; j++){
@@ -161,6 +208,11 @@
 			//console.log(premis1.slice(i + key.length, premis1.length)); //debug_line_can_be_removed
 			return premis1.slice(startStr, endStr);
 		}
+	}
+	
+	function modusTollensNegasiP(premis1){
+		var hasilP='Tidak Benar ';
+		return hasilP + modusTollensGetP(premis1);
 	}
 	</script>
 
