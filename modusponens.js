@@ -3,8 +3,7 @@
 		document.getElementById("premis2").innerHTML = premis2;
 		
 		//ambil 'p' pada 'premis 1' lalu hapus kata 'jika'
-		var premis1p = globalGetP(premis1, ' maka ');
-		premis1p = globalRemover(premis1p, 'jika ');
+		var premis1p = globalRemover(globalGetP(premis1, ' maka '), 'jika ');
 		
 		//console.log(premis1p); //debug_line_can_be_removed
 		
