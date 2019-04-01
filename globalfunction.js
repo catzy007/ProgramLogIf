@@ -57,7 +57,7 @@ function globalValidator(premis, key){
 	return false;
 }
 
-function globalFirstRemover(premis, key){
+function globalRemover(premis, key){
 	var mark=0; var startStr=0; var endStr=premis.length;
 	var result;
 	

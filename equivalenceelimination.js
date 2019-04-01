@@ -9,7 +9,7 @@
 	}
 		
 	function equElimResult(premis1, premis2){
-		var premis2 = globalFirstRemover(premis2, 'jika ');
+		var premis2 = globalRemover(premis2, 'jika ');
 		
 		var premis1p = globalGetP(premis1,' jika dan hanya jika ');
 		var premis1q = globalGetQ(premis1,' jika dan hanya jika ');
