@@ -2,7 +2,7 @@
 	function modusTollens(premis1, premis2){
 		document.getElementById("premis1").innerHTML = premis1;
 		document.getElementById("premis2").innerHTML = premis2;
-		if(modusTollensGetQ(premis1) == modusTollensCleanPremis(premis2) && modusTollensIsPNegasi(premis2)){
+		if(modusTollensGetQ(premis1) == modusTollensCleanNegasi(premis2) && modusTollensIsPNegasi(premis2)){
 			document.getElementById("konklusi").innerHTML = modusTollensNegasiP(premis1);
 		}else{
 			document.getElementById("konklusi").innerHTML = "Tidak Valid!";
@@ -16,8 +16,8 @@
 	}
 
 	//sebuah fungsi untuk menghilangkan negasi pada 'premis 2'
-	function modusTollensCleanPremis(premis2){
-		var mark=0; var key1='tidak '; var key2=' tidak ';
+	function modusTollensCleanNegasi(premis2){
+		var mark=0; var key1='tidak ';
 		var startStr=0; var endStr=premis2.length;
 		var result;
 
