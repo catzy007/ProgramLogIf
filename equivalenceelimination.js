@@ -15,7 +15,6 @@
 	}
 		
 	function equElimResult(premis1, premis2){
-		
 		var premis1p = globalGetP(premis1,' jika dan hanya jika ');
 		var premis1q = globalGetQ(premis1,' jika dan hanya jika ');
 		var premis2p = globalGetP(premis2,' maka ');

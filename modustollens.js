@@ -6,7 +6,7 @@
 		//ambil 'q' pada 'premis 1' lalu hapus kata 'jika'
 		var premis1q = globalRemover(globalGetQ(premis1, ' maka '), 'jika ');
 		
-		//hapus kata 'tidak' pada 'premis 2' 
+		//hapus kata 'tidak' atau 'tidak benar' pada 'premis 2' 
 		var premis2x = globalRemover(premis2, 'tidak benar ');
 		var premis2x = globalRemover(premis2x, 'tidak ');
 		
@@ -14,7 +14,10 @@
 		//console.log(premis2x); //debug_line_can_be_removed
 		
 		//jika premis1p sama dengan premis2x dan jika premis2 merupakan negasi
-		if(premis1q == premis2x && globalValidator(premis2, 'tidak ')){
+		if(globalValidator(premis1, ' maka ') 
+			&& premis1q == premis2x 
+			&& globalValidator(premis2, 'tidak ')
+		){
 			document.getElementById("konklusi").innerHTML = modusTollensNegasiP(premis1);
 		}else{
 			document.getElementById("konklusi").innerHTML = "Tidak Valid!";
