@@ -12,24 +12,7 @@
 	//sebuah fungsi untuk menegasikan 'p' pada 'premis 1'
 	function modusTollensNegasiP(premis1){
 		var hasilP='tidak benar ';
-		var key1='jika '; var mark;
-		var startStr=0; var endStr=premis1.length;
-		
-		for(var i=0; i<premis1.length; i++){
-			for(var j=0; j<key1.length; j++){
-				if(premis1.charAt(i+j) == key1.charAt(j)){
-					//console.log(premis1.charAt(i+j) + ' ' + key1.charAt(j) + ' ' + mark + ' ' + key1.length);
-					mark++;
-				}else{
-					mark=0;
-					break;
-				}
-				if(mark == key1.length){
-					startStr=i;
-				}
-			}
-		}
-		return hasilP + modusTollensGetP(premis1).slice(startStr, endStr);
+		return hasilP + modusTollensGetP(premis1);
 	}
 
 	//sebuah fungsi untuk menghilangkan negasi pada 'premis 2'
@@ -61,6 +44,7 @@
 		var mark=0; var key1='tidak ';
 		var strQ = modusPonensGetQ(premis2);
 		
+		//algroitma untuk mencari kata 'tidak' pada 'premis 2'
 		for(var i=0; i<strQ.length; i++){
 			for(var j=0; j<key1.length; j++){
 				if(strQ.charAt(i+j) == key1.charAt(j)){
