@@ -79,8 +79,10 @@
 			equElim(str1, str2);
 		}else if(mode == 4){	
 			siloDisjungtif(str1, str2);
-		}else if(mode > 4){
-			document.getElementById("errMsg").innerHTML = "Under Progress!";
+		}else if(mode == 5){
+			siloHipotesis(str1, str2);
+		}else if(mode > 5){
+			document.getElementById("errMsg").innerHTML = "Unknown Error Occured!";
 		}
 	}
 	</script>
@@ -97,7 +99,11 @@
 	<!-- algoritma dibawah adalah Equivalence Elemination ========== -->
 	<script src="equivalenceelimination.js"></script>
 
+	<!-- algoritma dibawah adalah silogisme disjungtif ============= -->
 	<script src="silogismedisjungtif.js"></script>
+	
+	<!-- algoritma dibawah adalah silogisme hipotesis ============== -->
+	<script src="silogismehipotesis.js"></script>
 
 	</body>
 </html> 
