@@ -1,3 +1,4 @@
+//fungsi ini berguna untuk mendapatkan 'P' pada 'premis input' yang dipisahkan oleh 'key'
 function globalGetP(premis, key){
 	var mark=0; var startStr=0; var endStr=premis.length;
 
@@ -18,6 +19,7 @@ function globalGetP(premis, key){
 	return premis.slice(startStr, endStr);
 }
 
+//fungsi ini berguna untuk mendapatkan 'Q' pada 'premis input' yang dipisahkan oleh 'key'
 function globalGetQ(premis, key){
 	var mark=0; var startStr=0; var endStr=premis.length;
 
@@ -38,6 +40,8 @@ function globalGetQ(premis, key){
 	return premis.slice(startStr, endStr);
 }
 
+//fungsi ini berguna untuk menentukan apakah 'key' ada dalam 'premis input'
+//jika ada maka 'return true' jika tidak ada maka 'return false'
 function globalValidator(premis, key){
 	var mark=0;
 	
@@ -57,6 +61,7 @@ function globalValidator(premis, key){
 	return false;
 }
 
+//fungsi ini berguna untuk menghapus 'key' pada 'premis input'
 function globalRemover(premis, key){
 	var mark=0; var startStr=0; var endStr=premis.length;
 	var result;

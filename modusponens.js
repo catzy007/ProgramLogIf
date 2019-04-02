@@ -7,6 +7,8 @@
 		
 		//console.log(premis1p); //debug_line_can_be_removed
 		
+		//'premis 1' harus berupa maka
+		//'premis 1 P' harus sama dengan 'premis 2'
 		if(globalValidator(premis1, ' maka ') && premis1p == premis2){
 			document.getElementById("konklusi").innerHTML = globalGetQ(premis1, ' maka ');
 		}else{
