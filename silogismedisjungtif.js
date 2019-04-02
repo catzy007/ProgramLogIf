@@ -17,15 +17,11 @@
 		//hilangkan 'tidak' dan 'tidak benar' pada 'premis 1 q'
 		var premis1qx = globalRemover(premis1q, 'tidak benar ');
 		var premis1qx = globalRemover(premis1qx, 'tidak ');
-		
-		//console.log(premis1p); //debug_line_can_be_removed
-		//console.log(premis1q); //debug_line_can_be_removed
-		//console.log(premis2); //debug_line_can_be_removed
-		
-		//'premis 1' harus berupa maka
+
+		//'premis 1' harus berupa 'atau'
 		//'premis 1 P' harus sama dengan 'premis 2'
-		//'premis 1 Q | P' tak boleh sama degan 'premis 2'
-		//'premis 1 Q | P' yang telah diproses harus sama dengan 'premis 2' yang telah diproses
+		//'premis 1 P' dan 'premis 1 Q' tak boleh sama degan 'premis 2'
+		//'premis 1 P' dan 'premis 1 Q' yang telah diproses harus sama dengan 'premis 2' yang telah diproses
 		if(globalValidator(premis1, ' atau ') && premis1p != premis2 && premis1px == premis2x){
 			document.getElementById("konklusi").innerHTML = globalGetQ(premis1, ' atau ');
 		}else if(globalValidator(premis1, ' atau ') && premis1q != premis2 && premis1qx == premis2x){

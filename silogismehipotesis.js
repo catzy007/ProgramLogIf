@@ -12,9 +12,6 @@
 		//ambil 'q' pada 'premis 2'
 		var premis2q = globalGetQ(premis2, ' maka ');
 
-		//console.log(premis1q); //debug_line_can_be_removed
-		//console.log(premis2p); //debug_line_can_be_removed
-
 		//jika 'premis 1 Q' sama dengan 'premis 2 P'
 		if(premis1q == premis2p){
 			document.getElementById("konklusi").innerHTML = 'jika ' + premis1p + ' maka ' + premis2q;
