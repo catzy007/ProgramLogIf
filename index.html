@@ -9,7 +9,6 @@
 <style>
     body{
         background-image: url("background.jpg");
-        
     }
     .mycontainer{
         position: absolute;
@@ -33,36 +32,30 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-sm-12">
-                <div class="mycontainer">        
-                        <form action="#">
-                            <div class="form-group">
-                                    <tr>
-                                        <label for="sel1">Pilih mode:</label>
-                                            <td>
-                                                <select class="form-control" id="IptMode">
-                                                    <option value="1" selected>Modus Ponens</option>
-                                                    <option value="2">Modus Tollens</option>
-                                                    <option value="3">Equivalence Elimination</option>
-                                                    <option value="4">Silogisme Disjungtif</option>
-                                                    <option value="5">Silogisme Hipotesis</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <br>
-                              <label for="premis1">Premis 1:</label>
-                              <input type="text" class="form-control"  id="IptPremis1">
-                            </div>
-                            <div class="form-group">
-                              <label for="premis2">Premis 2:</label>
-                              <input type="text" class="form-control" id="IptPremis2">
-                            </div>
-                            <button type="submit" class="btn btn-success btn-block" onclick="myFunction()" value="Submit">Submit</button>
-                            <br>
-                            <p>premis 1 : <a id="premis1"></a></p>
-                            <p>premis 2 : <a id="premis2"></a></p>
-                            <p>kesimpulan : <a id="konklusi"></a></p>
-                            <p><a id="errMsg"></a></p>
-                          </form> 
+                <div class="mycontainer">
+					<div class="form-group">
+						<p><strong>Pilih mode :</strong></p>
+						<select class="form-control" id="IptMode">
+							<option value="1" selected>Modus Ponens</option>
+							<option value="2">Modus Tollens</option>
+							<option value="3">Equivalence Elimination</option>
+							<option value="4">Silogisme Disjungtif</option>
+							<option value="5">Silogisme Hipotesis</option>
+						</select>
+						<br>
+						<p><strong>Premis 1 :</strong></p>
+						<input type="text" class="form-control" id="IptPremis1">
+						<br>
+						<p><strong>Premis 2 :</strong></p>
+						<input type="text" class="form-control" id="IptPremis2">
+						<br>
+						<button type="submit" class="btn btn-success btn-block" onclick="myFunction()" value="Submit">Submit</button>
+					</div>
+					<br>
+					<p>premis 1 : <a id="premis1"></a></p>
+					<p>premis 2 : <a id="premis2"></a></p>
+					<p>kesimpulan : <a id="konklusi"></a></p>
+					<p><a id="errMsg"></a></p>
                 </div>
         </div>
     </div>
@@ -89,7 +82,7 @@
                 siloDisjungtif(str1, str2);
             }else if(mode == 5){
                 siloHipotesis(str1, str2);
-            }else if(mode > 5){
+            }else if(mode > 5 || mode < 1){
                 document.getElementById("errMsg").innerHTML = "Unknown Error Occured!";
             }
         }
