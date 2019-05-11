@@ -7,7 +7,7 @@
 * [Bayu Grafit Nur Alfian](https://github.com/Grafiters)
 
 ### Tentang
-Program ini dibuat berdasarkan salah satu materi Logika Informatika yaitu `Metode Inferensi` digabungkan dengan [Natural Languange Processing](https://en.wikipedia.org/wiki/Natural_language_processing) program ini dapat mengahsilkan satu kesimpulan berdasarkan dua premis input.
+Program ini dibuat berdasarkan salah satu materi Logika Informatika yaitu `Metode Inferensi` digabungkan dengan Rule-Based [Natural Languange Processing](https://en.wikipedia.org/wiki/Natural_language_processing) program ini dapat mengahsilkan satu kesimpulan berdasarkan dua premis input.
 
 ### Penggunaan
 Cukup buka link berikut <https://catzy007.github.io/logif/>
